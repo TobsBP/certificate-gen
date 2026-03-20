@@ -1,0 +1,58 @@
+.custom-card {
+  width: 672px;
+  gap: 32px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  padding: 32px;
+}
+
+.card-title {
+  font-weight: 700;
+  font: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #1A2856;
+  margin-bottom: 20px;
+}
+
+.activit-group {
+  margin-bottom: 32px;
+}
+
+label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #1A2856;
+}
+
+.item-list {
+  width: 100%;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 12px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-list hr {
+  margin: 12px 0;
+}
+
+.remove-btn i {
+  padding: 5.75px;
+  color: red;
+  font-size: 12.5px;
+  border-radius: 4px;
+}
+
+.remove-btn i:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
