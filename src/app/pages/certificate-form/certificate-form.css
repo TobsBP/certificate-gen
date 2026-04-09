@@ -42,6 +42,10 @@ label {
 }
 
 .item-list hr {
+  all: unset;
+  display: block;
+  height: 1px;
+  background-color: #E2E8F0;
   margin: 12px 0;
 }
 
@@ -49,10 +53,18 @@ label {
   padding: 5.75px;
   color: red;
   font-size: 12.5px;
+  cursor: pointer;
   border-radius: 4px;
 }
 
 .remove-btn i:hover {
   opacity: 50%;
   cursor: pointer;
+}
+
+.custom-input {
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  height: 40px;
 }
