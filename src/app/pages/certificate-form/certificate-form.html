@@ -1,36 +1,70 @@
 <div class="d-flex flex-column align-items-center">
   <div class="content-title">
-    <h1 class="fw-bold custom-title">Certificates generateds</h1>
-
-    <p class="custom-subtitle mb-4">See all the certificates</p>
+    <h1 class="fw-bold custom-title">Generate Certificate</h1>
+    <p class="custom-subtitle mb-4">Fill in the details to create a certificate</p>
   </div>
 
   <div class="custom-card w-100">
     <h2 class="card-title">New Certificate</h2>
-    <div class="mb-3">
-      <label class="form-label">Name</label>
-      <input type="text" class="form-control custom-input" placeholder="Student Name" />
-    </div>
-    <div class="mb-3 d-flex align-items-end">
-      <div class="grow me-2">
-        <label class="form-label">Activit</label>
-        <input type="text" class="form-control" placeholder="Activate" />
-      </div>
-      <app-secondary-button></app-secondary-button>
-    </div>
-    <div class="activit-group">
-      <label class="form-label">Activit</label>
-      <div class="item-list w-100">
-        <div class="item">
-          <span class="item-text">Settings with angular CLI</span>
-          <div class="remove-btn">
-            <i class="ph-bold ph-x"></i>
-          </div>
-        </div>
-        <hr />
-      </div>
+
+    <div class="mb-3 custom-input-group">
+      <label for="name" class="form-label">Student Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control custom-input"
+        [class.is-invalid]="nameInvalid"
+        placeholder="Student Name"
+        [(ngModel)]="studentName"
+        (blur)="nameTouched = true"
+      />
+      @if (nameInvalid) {
+        <span class="error-msg">Student name is required</span>
+      }
     </div>
 
-    <app-primary-button></app-primary-button>
+    <div class="mb-3 d-flex align-items-end custom-input-group">
+      <div class="grow me-2">
+        <label class="form-label">Activity</label>
+        <input
+          type="text"
+          class="form-control custom-input"
+          [class.is-invalid]="activityInvalid"
+          placeholder="Activity name"
+          [(ngModel)]="currentActivity"
+          (blur)="activityTouched = true"
+          (keydown.enter)="addActivity()"
+        />
+        @if (activityInvalid) {
+          <span class="error-msg">Type an activity before adding</span>
+        }
+      </div>
+      <app-secondary-button (click)="addActivity()"></app-secondary-button>
+    </div>
+
+    @if (activities.length > 0) {
+      <div class="activit-group">
+        <label class="form-label">Activities</label>
+        <div class="item-list w-100">
+          @for (activity of activities; track $index; let last = $last) {
+            <div class="item">
+              <span class="item-text">{{ activity }}</span>
+              <div class="remove-btn" (click)="removeActivity($index)">
+                <i class="ph-bold ph-x"></i>
+              </div>
+            </div>
+            @if (!last) {
+              <hr />
+            }
+          }
+        </div>
+      </div>
+    }
+
+    @if (activitiesError) {
+      <span class="error-msg">Add at least one activity</span>
+    }
+
+    <app-primary-button (click)="generate()"></app-primary-button>
   </div>
 </div>

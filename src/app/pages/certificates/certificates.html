@@ -1,17 +1,22 @@
 <div class="d-flex flex-column align-items-center">
   <div class="content-title">
-    <h1 class="fw-bold custom-title">Certificates generateds</h1>
-  
-    <p  class="custom-subtitle mb-4">See all the certificates</p>
+    <h1 class="fw-bold custom-title">Generated Certificates</h1>
+    <p class="custom-subtitle mb-4">See all generated certificates</p>
   </div>
-  
-  <div class="custom-card w-100">
-    <i class="ph ph-certificate"></i>
-    <div class="custom-warning-titles">
-      <h3 class="card-title">None certificates</h3>
-      <p class="card-subtitle">Generate certificates to see the history</p>
+
+  @if (certificates().length === 0) {
+    <div class="custom-card empty-state w-100">
+      <i class="ph ph-certificate cert-icon"></i>
+      <div class="custom-warning-titles">
+        <h3 class="card-title">No certificates yet</h3>
+        <p class="card-subtitle">Generate certificates to see the history</p>
+      </div>
     </div>
-    
-    <app-secondary-button></app-secondary-button>
-  </div>  
+  } @else {
+    <div class="cert-list w-100">
+      @for (cert of certificates(); track cert.id) {
+        <app-certificate-item [certificate]="cert"></app-certificate-item>
+      }
+    </div>
+  }
 </div>

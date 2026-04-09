@@ -1,7 +1,44 @@
 .student-name {
-  color: #1A2856;
+  color: #1a2856;
 }
 
 .small-date {
-  color: #64748B;
+  color: #64748b;
+}
+
+.cert-hidden {
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
+  pointer-events: none;
+}
+
+.btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.15s;
+}
+
+.btn-download {
+  color: #3b5ac2;
+}
+
+.btn-download:hover {
+  background: #eff2fb;
+}
+
+.btn-remove {
+  color: #e53e3e;
+}
+
+.btn-remove:hover {
+  background: #fff5f5;
 }

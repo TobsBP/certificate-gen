@@ -1,0 +1,112 @@
+.certificate {
+  position: relative;
+  width: 800px;
+  height: 565px;
+  overflow: hidden;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.cert-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cert-ribbon {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  width: 90px;
+  z-index: 2;
+}
+
+.cert-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 80px;
+  z-index: 1;
+}
+
+.cert-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cert-logo {
+  height: 48px;
+}
+
+.cert-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.cert-label {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a2856;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.cert-subtitle {
+  font-size: 13px;
+  color: #4a5568;
+  margin: 0;
+  font-style: italic;
+}
+
+.cert-name {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a2856;
+  margin: 4px 0;
+  font-style: italic;
+}
+
+.cert-activities {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cert-activities li {
+  font-size: 13px;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.cert-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.cert-signature {
+  height: 48px;
+}
+
+.cert-date {
+  font-size: 11px;
+  color: #718096;
+  margin: 0;
+}

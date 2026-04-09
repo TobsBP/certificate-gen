@@ -1,0 +1,28 @@
+<div class="certificate">
+  <img src="Certificate_BG.png" class="cert-bg" alt="" />
+  <img src="Certificate_Ribbon.png" class="cert-ribbon" alt="" />
+
+  <div class="cert-overlay">
+    <div class="cert-header">
+      <img src="Logo.svg" class="cert-logo" alt="Logo" />
+    </div>
+
+    <div class="cert-body">
+      <p class="cert-label">Certificate of Completion</p>
+      <p class="cert-subtitle">This certifies that</p>
+      <h1 class="cert-name">{{ certificate().studentName }}</h1>
+      <p class="cert-subtitle">has successfully completed</p>
+
+      <ul class="cert-activities">
+        @for (activity of certificate().activities; track $index) {
+          <li>{{ activity }}</li>
+        }
+      </ul>
+    </div>
+
+    <div class="cert-footer">
+      <img src="Certificate_Signature.svg" class="cert-signature" alt="Signature" />
+      <p class="cert-date">{{ certificate().generatedAt | date: 'MMMM d, yyyy' }}</p>
+    </div>
+  </div>
+</div>

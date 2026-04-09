@@ -68,3 +68,28 @@ label {
   padding: 8px 12px;
   height: 40px;
 }
+
+.custom-input:focus {
+  border: 1px solid #3B5AC2;
+  box-shadow: none;
+}
+
+.custom-input.is-invalid {
+  border: 1px solid #e53e3e;
+  box-shadow: none;
+}
+
+div:has(input:focus) label {
+  color: #3B5AC2;
+}
+
+div:has(input.is-invalid) label {
+  color: #e53e3e;
+}
+
+.error-msg {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #e53e3e;
+}

@@ -10,6 +10,7 @@
   gap: 8px;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .custom-button:hover {

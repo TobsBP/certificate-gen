@@ -34,3 +34,14 @@
   text-align: center;
   color: #64748B;
 }
+
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 672px;
+}
+
+.cert-icon {
+  color: #94a3b8;
+}
